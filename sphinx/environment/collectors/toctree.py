@@ -204,12 +204,16 @@ class TocTreeCollector(EnvironmentCollector):
         for docname in env.numbered_toctrees:
             assigned.add(docname)
             doctree = env.get_doctree(docname)
+            offset = 0
             for toctreenode in doctree.traverse(addnodes.toctree):
                 depth = toctreenode.get('numbered', 0)
                 if depth:
+                    start = toctreenode.get('continue', 1)
+                    if start > 0: offset = start - 1
                     # every numbered toctree gets new numbering
-                    numstack = [0]
+                    numstack = [offset]
                     _walk_toctree(toctreenode, depth)
+                    offset = numstack[0]
 
         return rewrite_needed
 

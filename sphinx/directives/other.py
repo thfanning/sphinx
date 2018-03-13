@@ -41,6 +41,13 @@ def int_or_nothing(argument):
     return int(argument)
 
 
+def int_or_next(argument):
+    # type: (unicode) -> int
+    if not argument:
+        return -1
+    return int(argument)
+
+
 class TocTree(SphinxDirective):
     """
     Directive to notify Sphinx about the hierarchical structure of the docs,
@@ -58,6 +65,7 @@ class TocTree(SphinxDirective):
         'hidden': directives.flag,
         'includehidden': directives.flag,
         'numbered': int_or_nothing,
+        'continue': int_or_next,
         'titlesonly': directives.flag,
         'reversed': directives.flag,
     }
@@ -77,6 +85,7 @@ class TocTree(SphinxDirective):
         subnode['hidden'] = 'hidden' in self.options
         subnode['includehidden'] = 'includehidden' in self.options
         subnode['numbered'] = self.options.get('numbered', 0)
+        subnode['continue'] = self.options.get('continue', 1)
         subnode['titlesonly'] = 'titlesonly' in self.options
         set_source_info(self, subnode)
         wrappernode = nodes.compound(classes=['toctree-wrapper'])
