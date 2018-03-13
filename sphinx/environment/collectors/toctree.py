@@ -209,7 +209,8 @@ class TocTreeCollector(EnvironmentCollector):
                 depth = toctreenode.get('numbered', 0)
                 if depth:
                     start = toctreenode.get('continue', 1)
-                    if start > 0: offset = start - 1
+                    if start > 0:
+                        offset = start - 1
                     # every numbered toctree gets new numbering
                     numstack = [offset]
                     _walk_toctree(toctreenode, depth)
