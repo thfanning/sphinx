@@ -105,6 +105,33 @@ tables of contents.  The ``toctree`` directive is the central element.
 
    Numbering up to a specific depth is also possible, by giving the depth as a
    numeric argument to ``numbered``.
+   
+   If you have multiple ``numbered`` toctrees in the same document,
+   use the ``continue`` option to apply sequential numbering. For example::
+
+      Part I
+      ======
+
+      .. toctree::
+         :numbered:
+
+         foo
+         bar
+
+      Part II
+      =======
+
+      .. toctree::
+         :numbered:
+         :continue:
+
+         baz
+
+   Numbering for the heading of ``baz`` will ``continue`` where the numbering
+   for the heading of ``bar`` left off.
+   
+   Starting a toctree at a specific number is also possible by giving a positive
+   value as a numeric argument to ``continue``. 
 
    **Additional options**
 

@@ -40,6 +40,11 @@ def int_or_nothing(argument):
         return 999
     return int(argument)
 
+def int_or_next(argument):
+    # type: (unicode) -> int
+    if not argument:
+        return -1
+    return int(argument)
 
 def int_or_next(argument):
     # type: (unicode) -> int
