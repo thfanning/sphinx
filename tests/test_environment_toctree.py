@@ -359,20 +359,20 @@ def test_continue(app):
                      [list_item, compact_paragraph, reference, u"Bar"])
                 ])
     assert_node(toctree[0][0][0][0],
-                reference, secnumber=(1,))
+                reference, secnumber=[1])
     assert_node(toctree[0][1][0][0],
-                reference, secnumber=(2,))
+                reference, secnumber=[2])
 
     # Part II
     assert_node(toctree[1],
                 [bullet_list, list_item, compact_paragraph, reference, u"Baz"])
     assert_node(toctree[1][0][0][0],
-                reference, secnumber=(3,))
+                reference, secnumber=[3])
 
     # Part IV
     assert_node(toctree[2],
                 [bullet_list, list_item, compact_paragraph, reference, u"Buz"])
     assert_node(toctree[2][0][0][0],
-                reference, secnumber=(6,))
+                reference, secnumber=[6])
 
 
