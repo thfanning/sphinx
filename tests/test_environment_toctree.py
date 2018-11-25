@@ -374,5 +374,3 @@ def test_continue(app):
                 [bullet_list, list_item, compact_paragraph, reference, u"Buz"])
     assert_node(toctree[2][0][0][0],
                 reference, secnumber=[6])
-
-

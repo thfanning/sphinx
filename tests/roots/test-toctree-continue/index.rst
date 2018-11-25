@@ -7,7 +7,7 @@ Part I
 .. toctree::
 	:numbered:
 	:continue:
-	
+
 	foo
 	bar
 
@@ -17,7 +17,7 @@ Part II
 .. toctree::
 	:numbered:
 	:continue:
-	
+
 	baz
 
 Part III
@@ -31,5 +31,5 @@ Part IV
 .. toctree::
 	:numbered:
 	:continue: 6
-	
+
 	buz
