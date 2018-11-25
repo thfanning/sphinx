@@ -46,12 +46,6 @@ def int_or_next(argument):
         return -1
     return int(argument)
 
-def int_or_next(argument):
-    # type: (unicode) -> int
-    if not argument:
-        return -1
-    return int(argument)
-
 
 class TocTree(SphinxDirective):
     """
