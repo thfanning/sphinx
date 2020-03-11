@@ -144,6 +144,7 @@ class Config:
         'math_number_all': (False, 'env', []),
         'math_eqref_format': (None, 'env', [str]),
         'math_numfig': (True, 'env', []),
+        'math_numsep': (None, 'env', [str]),
         'tls_verify': (True, 'env', []),
         'tls_cacerts': (None, 'env', []),
         'user_agent': (None, 'env', [str]),

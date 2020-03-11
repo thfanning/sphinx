@@ -23,7 +23,11 @@ def get_node_equation_number(writer: HTMLTranslator, node: nodes.math_block) -> 
 
         id = node['ids'][0]
         number = writer.builder.fignumbers.get(key, {}).get(id, ())
-        return '.'.join(map(str, number))
+        eqno = '.'.join(map(str, number))
+        if writer.builder.config.math_numsep:
+            eqno = eqno.rsplit('.',1)
+            eqno = writer.builder.config.math_numsep.join(eqno)
+        return eqno
     else:
         return node['number']
 
