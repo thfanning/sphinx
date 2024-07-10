@@ -233,14 +233,16 @@ class TocTreeCollector(EnvironmentCollector):
                     if secnums != old_secnumbers.get(ref):
                         rewrite_needed.append(ref)
 
-        for docname in env.numbered_toctrees:
+        numbered_toctrees = [toc for toc in env.tocs if toc in env.numbered_toctrees]
+
+        numstack = [0]
+        for docname in numbered_toctrees:
             assigned.add(docname)
             doctree = env.get_doctree(docname)
             for toctreenode in doctree.findall(addnodes.toctree):
                 depth = toctreenode.get('numbered', 0)
                 if depth:
-                    # every numbered toctree gets new numbering
-                    numstack = [0]
+                    # every numbered toctree continues numbering
                     _walk_toctree(toctreenode, depth)
 
         return rewrite_needed
