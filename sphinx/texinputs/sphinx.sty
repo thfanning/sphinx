@@ -156,6 +156,7 @@ will be set to white}%
 \DeclareStringOption[-1]{numfigreset}
 \DeclareBoolOption[false]{nonumfigreset}
 \DeclareBoolOption[false]{mathnumfig}
+\DeclareStringOption[.]{mathnumsep}
 \define@key{sphinx}{bookmarksdepth}{\AtBeginDocument{\hypersetup{bookmarksdepth=#1}}}
 \AtBeginDocument{\define@key{sphinx}{bookmarksdepth}{\hypersetup{bookmarksdepth=#1}}}
 % \DeclareBoolOption[false]{usespart}% not used
@@ -784,6 +785,7 @@ will be set to white}%
 \DisableKeyvalOption{sphinx}{numfigreset}
 \DisableKeyvalOption{sphinx}{nonumfigreset}
 \DisableKeyvalOption{sphinx}{mathnumfig}
+\DisableKeyvalOption{sphinx}{mathnumsep}
 \DisableKeyvalOption{sphinx}{booktabs}
 \DisableKeyvalOption{sphinx}{borderless}
 \DisableKeyvalOption{sphinx}{rowcolors}
